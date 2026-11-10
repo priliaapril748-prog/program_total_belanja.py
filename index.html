@@ -1,0 +1,51 @@
+
+# =========================================
+#       PROGRAM MENGHITUNG TOTAL BELANJA
+# =========================================
+
+print("=========================================")
+print("          SELAMAT DATANG DI KASIR")
+print("=========================================")
+print("       PROGRAM MENGHITUNG BELANJA")
+print("-----------------------------------------")
+
+total = 0
+daftar_barang = []
+
+while True:
+    print("\nMasukkan Data Barang")
+    print("-----------------------------------------")
+
+    nama = input("Nama barang       : ")
+    harga = int(input("Harga barang (Rp) : "))
+    jumlah = int(input("Jumlah barang     : "))
+
+    subtotal = harga * jumlah
+    total += subtotal
+
+    daftar_barang.append((nama, harga, jumlah, subtotal))
+
+    print("-----------------------------------------")
+    print("Subtotal          : Rp", subtotal)
+
+    tambah = input("\nTambah barang lagi? (ya/tidak): ")
+
+    if tambah.lower() != "ya":
+        break
+
+# Menampilkan struk belanja
+print("\n=========================================")
+print("              STRUK BELANJA")
+print("=========================================")
+
+for barang in daftar_barang:
+    print("Nama barang   :", barang[0])
+    print("Harga         : Rp", barang[1])
+    print("Jumlah        :", barang[2])
+    print("Subtotal      : Rp", barang[3])
+    print("-----------------------------------------")
+
+print("TOTAL BELANJA : Rp", total)
+print("=========================================")
+print("       TERIMA KASIH TELAH BERBELANJA")
+print("=========================================")
